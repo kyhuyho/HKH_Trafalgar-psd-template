@@ -1,0 +1,132 @@
+.check {
+  margin-top: 22rem;
+  &-container {
+    padding: 0 5rem;
+  }
+  &-top {
+    max-width: 46.2rem;
+    margin: 0 auto;
+  }
+  &-heading {
+    position: relative;
+    padding-bottom: 2.6rem;
+    margin-bottom: 8rem;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 5.6rem;
+      height: 2px;
+      background-color: $heading-color;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    --image-height: 24rem;
+  }
+  &-item {
+    width: calc((100% / 3) - 2.3rem);
+  }
+  &-image {
+    width: 100%;
+    height: var(--image-height);
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  &-content {
+    padding: 2.4rem 5rem 3.5rem 3.3rem;
+    background-color: white;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    height: calc(100% - var(--image-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-title {
+    color: $heading-color;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  &-desc {
+    font-size: 1.6rem;
+    line-height: calc(28 / 16);
+    margin-bottom: 2.5rem;
+  }
+  &-more {
+    font-size: 1.7rem;
+    color: $primary-color;
+    font-weight: 600;
+  }
+  &-all {
+    margin: 7rem auto 0;
+    padding: 0 5rem;
+    width: max-content;
+  }
+  @media screen and(max-width:1279px) {
+    margin-top: 18rem;
+    &-container {
+      padding: 0 3rem;
+    }
+    &-content {
+      text-align: center;
+    }
+  }
+  @media screen and(max-width:1023px) {
+    margin-top: 15rem;
+    &-container {
+      padding: 0;
+    }
+    &-list {
+      --image-height: 20rem;
+    }
+    &-item {
+      width: calc((100% / 3) - 1.5rem);
+    }
+    &-content {
+      padding: 2rem;
+    }
+    &-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    &-desc {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    &-all {
+      margin-top: 5rem;
+    }
+  }
+  @media screen and(max-width:767px) {
+    margin-top: 8rem;
+    &-top {
+      text-align: center;
+    }
+    &-heading {
+      margin-bottom: 5rem;
+    }
+    &-list {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 80%;
+      grid-gap: 0 3rem;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    &-item {
+      scroll-snap-align: center;
+      width: auto;
+    }
+  }
+}

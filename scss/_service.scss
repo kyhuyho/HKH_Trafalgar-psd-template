@@ -1,0 +1,121 @@
+.service {
+  margin-top: 19rem;
+  &-top {
+    max-width: 95.2rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-heading {
+    position: relative;
+    padding-bottom: 2.6rem;
+    margin-bottom: 3.3rem;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 5.6rem;
+      height: 2px;
+      background-color: $heading-color;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &-list {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 0 7.4rem 0 2.4rem;
+  }
+  &-item {
+    width: calc((100% / 3) - 2rem);
+    background-color: white;
+    margin-bottom: 3.7rem;
+    border-radius: 2rem;
+    padding: 5.8rem 5.2rem 4.7rem 3.6rem;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  }
+  &-image {
+    height: 9rem;
+  }
+  &-content {
+    padding-top: 2rem;
+  }
+  &-title {
+    font-size: 2.4rem;
+    line-height: calc(56 / 24);
+    margin-bottom: 1rem;
+  }
+  &-desc {
+    font-size: 1.6rem;
+    line-height: calc(28 / 16);
+  }
+  &-more {
+    padding: 0 7.4rem 0 2.4rem;
+    width: max-content;
+    display: block;
+    margin: 3.2rem auto 0;
+  }
+  @media screen and (max-width: 1439px) {
+    margin-top: 15rem;
+    &-more {
+      margin-top: 2.5rem;
+    }
+  }
+  @media screen and (max-width: 1279px) {
+    margin-top: 10rem;
+    &-list {
+      padding: 0 2.5rem 0 2rem;
+    }
+    &-more {
+      padding: 0 2.5rem 0 2rem;
+    }
+  }
+  @media screen and(max-width:1023px) {
+    margin-top: 5rem;
+    &-list {
+      margin-top: 5rem;
+      padding: 0;
+    }
+    &-item {
+      width: calc(50% - 2rem);
+    }
+  }
+  @media screen and(max-width:767px) {
+    &-heading {
+      font-size: 2.6rem;
+      padding-bottom: 1.6rem;
+      margin-bottom: 2.3rem;
+    }
+    &-list {
+      margin-top: 3rem;
+      display: grid;
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+      overflow-x: auto;
+      grid-gap: 0 3rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    &-item {
+      scroll-snap-align: center;
+      width: auto;
+      padding: 3.8rem 3.2rem 1.7rem 2.6rem;
+    }
+    &-more {
+      padding: 0;
+    }
+  }
+  @media screen and(max-width:320px) {
+    &-title {
+      font-size: 2rem;
+    }
+  }
+}
